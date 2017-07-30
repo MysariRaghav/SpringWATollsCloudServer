@@ -1,5 +1,7 @@
 ---
 spring:
+  application:
+    name: configserver
   cloud:
     config:
       server:
@@ -9,8 +11,18 @@ spring:
 #          password:Kill4win
           search-paths:
             - 'station*'
-
-
+        encrypt:
+          enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 
 server:
   port: 8888
+security:
+  basic:
+    enabled: true
+  user:
+    name: rmysari
+    password: Kill4win
